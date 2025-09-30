@@ -137,3 +137,14 @@ trademarks or logos is subject to and must follow
 [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
 Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
 Any use of third-party trademarks or logos is subject to those third-parties' policies.
+
+## Notes
+To exit the venv
+````bash
+deactivate
+````
+
+To activate venv
+````bash
+source .venv/bin/activate
+````
