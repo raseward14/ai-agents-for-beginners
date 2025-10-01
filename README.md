@@ -140,11 +140,11 @@ Any use of third-party trademarks or logos is subject to those third-parties' po
 
 ## Notes
 To exit the venv
-````bash
+````javascript
 deactivate
 ````
 
 To activate venv
-````bash
+````javascript
 source .venv/bin/activate
 ````
