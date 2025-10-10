@@ -19,16 +19,13 @@ class DestinationsPlugin:
     def __init__(self):
         # List of vacation destinations
         self.destinations = [
-            "Barcelona, Spain",
-            "Paris, France",
-            "Berlin, Germany",
-            "Tokyo, Japan",
-            "Sydney, Australia",
-            "New York, USA",
-            "Cairo, Egypt",
-            "Cape Town, South Africa",
-            "Rio de Janeiro, Brazil",
-            "Bali, Indonesia"
+            "Denver, Colorado",
+            "Miami, Florida",
+            "St. Louis, Missouri",
+            "Siem Reap, Cambodia",
+            "Greeley, Colorado",
+            "Peyton, Colorado",
+            "Black Forest, Colorado",
         ]
         # Track last destination to avoid repeats
         self.last_destination = None
@@ -56,6 +53,7 @@ client = AsyncOpenAI(
 
 # Create an AI Service that will be used by the `ChatCompletionAgent`
 chat_completion_service = OpenAIChatCompletion(
+    # "gpt-4o-mini"
     ai_model_id="gpt-4o-mini",
     async_client=client,
 )
@@ -74,7 +72,11 @@ async def main():
     thread: ChatHistoryAgentThread | None = None
 
     user_inputs = [
-        "I don't like that destination. Plan me another vacation",
+        # "Plan me a day trip.",
+        # "I don't like that destination. Plan me another vacation",
+        # "Yes please. What is the school mascot? I would like to go to a baseball game."
+        # "Oh I'm sorry, I meant to ask what the mascot of Peyton High School is."
+        "If I'm looking for something with a rodeo, where do you recommend I go?"
     ]
 
     for user_input in user_inputs:
