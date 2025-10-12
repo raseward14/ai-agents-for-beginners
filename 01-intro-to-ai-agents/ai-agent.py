@@ -52,9 +52,17 @@ client = AsyncOpenAI(
 )
 
 # Create an AI Service that will be used by the `ChatCompletionAgent`
+# you can experiment with other supported models from the GitHub Models marketplace
+# from the GPT series: gpt-4, gpt-3.5-turbo, gpt-4-turbo, gpt-b-turbo-2024-04-09, gpt-4o, gpt-4o-2024-08-06 the flagship omni modelwith string multimodal capabilities and speed
+# gpt-3.5-turbo, gpt-3.5-turbo-0125 a fast, cost-efficient option, which smaller gpt-40-mimi is often an ideal replacement for
+# list of available models, and model ids here https://github.com/marketplace?type=models
+# or OpenAI models documentation https://platform.openai.com/docs/models
+## Mistral Medium 3
+# mistral-medium-2505
+# mistral-medium-latest
 chat_completion_service = OpenAIChatCompletion(
     # "gpt-4o-mini"
-    ai_model_id="gpt-4o-mini",
+    ai_model_id="gpt-4",
     async_client=client,
 )
 
@@ -72,11 +80,11 @@ async def main():
     thread: ChatHistoryAgentThread | None = None
 
     user_inputs = [
-        # "Plan me a day trip.",
+        "Plan me a day trip.",
         # "I don't like that destination. Plan me another vacation",
         # "Yes please. What is the school mascot? I would like to go to a baseball game."
         # "Oh I'm sorry, I meant to ask what the mascot of Peyton High School is."
-        "If I'm looking for something with a rodeo, where do you recommend I go?"
+        # "If I'm looking for something with a rodeo, where do you recommend I go?"
     ]
 
     for user_input in user_inputs:
