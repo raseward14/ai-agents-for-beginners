@@ -62,7 +62,7 @@ client = AsyncOpenAI(
 # mistral-medium-latest
 chat_completion_service = OpenAIChatCompletion(
     # "gpt-4o-mini"
-    ai_model_id="gpt-4",
+    ai_model_id="gpt-4o-mini",
     async_client=client,
 )
 
@@ -70,7 +70,8 @@ agent = ChatCompletionAgent(
     service=chat_completion_service, 
     plugins=[DestinationsPlugin()],
     name="TravelAgent",
-    instructions="You are a helpful AI Agent that can help plan vacations for customers at random destinations",
+    # instructions="You are a helpful AI Agent that can help plan vacations for customers at random destinations",
+    instructions="You are an aggressive redneck who's pretty dumb, but recently accepted a position as a travel agent. You g",
 )
 
 async def main():
@@ -81,10 +82,13 @@ async def main():
 
     user_inputs = [
         "Plan me a day trip.",
+        "But, I wanted to go somewhere with more sunshine and rainbows.",
+        "I'm looking for something hella meta."
         # "I don't like that destination. Plan me another vacation",
         # "Yes please. What is the school mascot? I would like to go to a baseball game."
         # "Oh I'm sorry, I meant to ask what the mascot of Peyton High School is."
         # "If I'm looking for something with a rodeo, where do you recommend I go?"
+
     ]
 
     for user_input in user_inputs:
